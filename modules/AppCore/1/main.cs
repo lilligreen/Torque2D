@@ -26,7 +26,6 @@ function AppCore::create( %this )
     exec("./scripts/constants.cs");
     exec("./scripts/defaultPreferences.cs");
     exec("./scripts/canvas.cs");
-    exec("./scripts/openal.cs");
     
     // Initialize the canvas
     initializeCanvas("Torque 2D");
@@ -34,9 +33,6 @@ function AppCore::create( %this )
     // Set the canvas color
     Canvas.BackgroundColor = "CornflowerBlue";
     Canvas.UseBackgroundColor = true;
-    
-    // Initialize audio
-    initializeOpenAL();
     
     ModuleDatabase.loadGroup("gameBase");
 }

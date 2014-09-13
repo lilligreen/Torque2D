@@ -26,7 +26,6 @@
 #include "platform/platform.h"
 #include "platform/platformVideo.h"
 #include "platform/platformInput.h"
-#include "platform/platformAudio.h"
 #include "platform/event.h"
 #include "game/gameInterface.h"
 #include "collection/vector.h"
@@ -648,19 +647,6 @@ AndroidProfilerStart("SERVER_PROC");
    PROFILE_START(TickableAdvanceTime);
    Tickable::advanceTime(elapsedTime);	
    PROFILE_END();
-
-   // Milliseconds between audio updates.
-   const U32 AudioUpdatePeriod = 125;
-
-   // alxUpdate is somewhat expensive and does not need to be updated constantly,
-   // though it does need to be updated in real time
-   static U32 lastAudioUpdate = 0;
-   U32 realTime = Platform::getRealMilliseconds();
-   if((realTime - lastAudioUpdate) >= AudioUpdatePeriod)
-   {
-      alxUpdate();
-      lastAudioUpdate = realTime;
-   }
 
 #ifdef TORQUE_OS_IOS_PROFILE
     iPhoneProfilerEnd("CLIENT_PROC");

@@ -69,8 +69,7 @@ void GuiCheckBoxCtrl::onMouseDown(const GuiEvent& event)
 
    if (mProfile->mSoundButtonDown)
    {
-      AUDIOHANDLE handle = alxCreateSource(mProfile->mSoundButtonDown);
-      alxPlay(handle);
+      // Replace with FMOD.
    }
 
    //lock the mouse

@@ -726,8 +726,7 @@ void GuiMLTextCtrl::insertChars(const char* inputChars,
       // Play the "Denied" sound:
       if ( numInputChars > 0 && mDeniedSound.notNull() )
       {
-         AUDIOHANDLE handle = alxCreateSource( mDeniedSound );
-         alxPlay( handle );
+         // Replace with FMOD.
       }
       return;
    }

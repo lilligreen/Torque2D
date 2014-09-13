@@ -23,7 +23,6 @@
 #include "console/console.h"
 #include "graphics/dgl.h"
 #include "console/consoleTypes.h"
-#include "platform/platformAudio.h"
 #include "gui/guiCanvas.h"
 #include "gui/buttons/guiButtonBaseCtrl.h"
 #include "gui/language/lang.h"
@@ -194,8 +193,7 @@ void GuiButtonBaseCtrl::onMouseDown(const GuiEvent &event)
 
    if (mProfile->mSoundButtonDown)
    {
-      AUDIOHANDLE handle = alxCreateSource(mProfile->mSoundButtonDown);
-      alxPlay(handle);
+      // Replace with FMOD.
    }
 
    //lock the mouse
@@ -222,8 +220,7 @@ void GuiButtonBaseCtrl::onMouseEnter(const GuiEvent &event)
    {
       if ( mActive && mProfile->mSoundButtonOver )
       {
-         AUDIOHANDLE handle = alxCreateSource(mProfile->mSoundButtonOver);
-         alxPlay(handle);
+         // Replace with FMOD.
       }
       mMouseOver = true;
    }
@@ -291,8 +288,7 @@ bool GuiButtonBaseCtrl::onKeyDown(const GuiEvent &event)
    {
        if ( mProfile->mSoundButtonDown )
        {
-          AUDIOHANDLE handle = alxCreateSource( mProfile->mSoundButtonDown );
-          alxPlay( handle );
+          // Replace with FMOD.
        }
       return true;
    }

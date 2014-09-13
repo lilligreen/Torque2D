@@ -43,10 +43,6 @@
 #include "graphics/TextureManager.h"
 #endif
 
-#ifndef _PLATFORMAUDIO_H_
-#include "platform/platformAudio.h"
-#endif
-
 #ifndef _AUDIO_ASSET_H_
 #include "audio/AudioAsset.h"
 #endif

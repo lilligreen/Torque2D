@@ -1375,8 +1375,7 @@ void GuiTextEditCtrl::playDeniedSound()
 {
     if ( mDeniedSound.notNull() )
    {
-      AUDIOHANDLE handle = alxCreateSource( mDeniedSound );
-      alxPlay( handle );
+      // Replace with FMOD.
    }
 }
 
