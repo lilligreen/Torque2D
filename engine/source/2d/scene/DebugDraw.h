@@ -49,6 +49,8 @@ public:
     void DrawCollisionShapes( const b2Transform& xf, b2Body* pBody );
     void DrawSortPoint( const b2Vec2& worldPosition, const b2Vec2& size, const b2Vec2& localSortPoint );
 
+    void DrawAudioEmitters( const b2Vec2& worldPosition, const b2Vec2& distances, const F32 angle );
+
     void DrawJoints( b2World* pWorld );
 
     void DrawShape( b2Fixture* fixture, const b2Transform& xf, const ColorF& color );

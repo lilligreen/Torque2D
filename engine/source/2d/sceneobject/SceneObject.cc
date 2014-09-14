@@ -68,6 +68,10 @@
 #include "string/stringUnit.h"
 #endif
 
+#ifndef _FMOD_AUDIO_H_
+#include "audio/FmodAudio.h"
+#endif
+
 // Script bindings.
 #include "SceneObject_ScriptBinding.h"
 
@@ -185,7 +189,8 @@ SceneObject::SceneObject() :
     mMoveToEventId(0),
     mRotateToEventId(0),
     mSerialId(0),
-    mRenderGroup( StringTable->EmptyString )
+    mRenderGroup( StringTable->EmptyString ),
+    mAudioListener(false)
 {
     // Set Vector Associations.
     VECTOR_SET_ASSOCIATION( mDestroyNotifyList );
@@ -322,6 +327,9 @@ void SceneObject::initPersistFields()
     addField("UpdateCallback", TypeBool, Offset(mUpdateCallback, SceneObject), &writeUpdateCallback, "");
     addField("CollisionCallback", TypeBool, Offset(mCollisionCallback, SceneObject), &writeCollisionCallback, "");
     addField("SleepingCallback", TypeBool, Offset(mSleepingCallback, SceneObject), &writeSleepingCallback, "");
+
+    // Audio listener.
+    addField("AudioListener", TypeBool, Offset(mAudioListener, SceneObject), &writeAudioListener, "");
 
     /// Scene.
     addProtectedField("scene", TypeSimObjectPtr, Offset(mpScene, SceneObject), &setScene, &defaultProtectedGetFn, &writeScene, "");
@@ -609,6 +617,12 @@ void SceneObject::integrateObject( const F32 totalTime, const F32 elapsedTime, D
     {
         // Yes, so calculate camera mount.
         mpAttachedCamera->calculateCameraMount( elapsedTime );
+    }
+    
+    // Is this object an audio listener?
+    if ( mAudioListener )
+    {
+        FmodAudio::updateAudioListener(position);
     }
 }
 

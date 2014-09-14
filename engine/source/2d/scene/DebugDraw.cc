@@ -198,6 +198,29 @@ void DebugDraw::DrawShape( b2Fixture* fixture, const b2Transform& xf, const Colo
 
 //-----------------------------------------------------------------------------
 
+void DebugDraw::DrawAudioEmitters( const b2Vec2& worldPosition, const b2Vec2& distances, const F32 angle )
+{
+    // Debug Profiling.
+    PROFILE_SCOPE(DebugDraw_AudioEmitters);
+
+    // Get min/max attenuation distance.
+    F32 minDistance = distances.x;
+    F32 maxDistance = distances.y;
+
+    // Get the rotation of the emitter.
+    b2Rot rotation;
+    rotation.Set(angle);
+
+    // Calculate object axis.
+    b2Vec2 axis = b2Mul(rotation, b2Vec2(0.0f, 1.0f));
+
+    DrawSolidCircle(worldPosition, minDistance, axis, ColorF(1.0f, 0.0f, 0.0f));
+    DrawSolidCircle(worldPosition, maxDistance, axis, ColorF(1.0f, 0.5f, 0.0f));
+
+}
+
+//-----------------------------------------------------------------------------
+
 void DebugDraw::DrawJoints( b2World* pWorld )
 {
     // Debug Profiling.

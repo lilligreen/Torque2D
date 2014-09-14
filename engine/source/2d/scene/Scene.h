@@ -190,6 +190,7 @@ public:
         SCENE_DEBUG_COLLISION_SHAPES   = BIT(19),
         SCENE_DEBUG_POSITION_AND_COM   = BIT(20),
         SCENE_DEBUG_SORT_POINTS        = BIT(21),
+        SCENE_DEBUG_AUDIO_EMITTER      = BIT(22),
     };
 
     /// Pick mode.
@@ -229,7 +230,7 @@ private:
     S32                         mJointMasterId;
 
     /// Scene controllers.
-    SimObjectPtr<SimSet>	    mControllers;
+    SimObjectPtr<SimSet>        mControllers;
 
     /// Asset pre-loads.
     typeAssetPtrVector          mAssetPreloads;
@@ -353,7 +354,7 @@ public:
 
     void                    mergeScene( const Scene* pScene );
 
-    inline SimSet*			getControllers( void )						{ return mControllers; }
+    inline SimSet*          getControllers( void )                      { return mControllers; }
 
     inline S32              getAssetPreloadCount( void ) const          { return mAssetPreloads.size(); }
     const AssetPtr<AssetBase>* getAssetPreload( const S32 index ) const;
@@ -443,8 +444,8 @@ public:
                                 F32& motorSpeed,
                                 F32& maxMotorTorque );
 
-	F32                     getRevoluteJointAngle( const U32 jointId );
-	F32						getRevoluteJointSpeed( const U32 jointId );
+    F32                     getRevoluteJointAngle( const U32 jointId );
+    F32                     getRevoluteJointSpeed( const U32 jointId );
 
     /// Weld joint.
     S32                     createWeldJoint(

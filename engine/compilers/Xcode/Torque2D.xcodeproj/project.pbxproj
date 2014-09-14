@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		27656A8719C411EB0049BFA8 /* AudioAsset.cc in Sources */ = {isa = PBXBuildFile; fileRef = 27656A8519C411EB0049BFA8 /* AudioAsset.cc */; };
+		27656A9019C567AB0049BFA8 /* AudioProvider.cc in Sources */ = {isa = PBXBuildFile; fileRef = 27656A8919C567AB0049BFA8 /* AudioProvider.cc */; };
+		27656A9119C567AB0049BFA8 /* AudioProviderCore.cc in Sources */ = {isa = PBXBuildFile; fileRef = 27656A8B19C567AB0049BFA8 /* AudioProviderCore.cc */; };
+		27656A9219C567AB0049BFA8 /* FmodAudio.cc in Sources */ = {isa = PBXBuildFile; fileRef = 27656A8E19C567AB0049BFA8 /* FmodAudio.cc */; };
+		27656A9619C567E40049BFA8 /* AudioEmitter.cc in Sources */ = {isa = PBXBuildFile; fileRef = 27656A9419C567E40049BFA8 /* AudioEmitter.cc */; };
+		27656A9819C56E130049BFA8 /* libfmod.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 27656A9719C56E130049BFA8 /* libfmod.dylib */; };
+		27656A9919C56E340049BFA8 /* libfmod.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27656A9719C56E130049BFA8 /* libfmod.dylib */; };
 		27908DFA18A3F8CB002D41BD /* Animation.c in Sources */ = {isa = PBXBuildFile; fileRef = 27908DCD18A3F8CB002D41BD /* Animation.c */; };
 		27908DFB18A3F8CB002D41BD /* AnimationState.c in Sources */ = {isa = PBXBuildFile; fileRef = 27908DCF18A3F8CB002D41BD /* AnimationState.c */; };
 		27908DFC18A3F8CB002D41BD /* AnimationStateData.c in Sources */ = {isa = PBXBuildFile; fileRef = 27908DD118A3F8CB002D41BD /* AnimationStateData.c */; };
@@ -86,7 +92,6 @@
 		865A20CD16515B1E00527C44 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 869FF8C01651518C002FE082 /* CoreData.framework */; };
 		865A20CE16515B1E00527C44 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 865A20C216515ACE00527C44 /* CoreFoundation.framework */; };
 		865A20CF16515B1E00527C44 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 869FF8C11651518C002FE082 /* Foundation.framework */; };
-		865A20D016515B1E00527C44 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 865A20C316515ACE00527C44 /* OpenAL.framework */; };
 		865A20D116515B1E00527C44 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 865A20C416515ACE00527C44 /* OpenGL.framework */; };
 		865A227B165187B600527C44 /* b2BroadPhase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 865A21EB165187B600527C44 /* b2BroadPhase.cpp */; };
 		865A227C165187B600527C44 /* b2CollideCircle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 865A21ED165187B600527C44 /* b2CollideCircle.cpp */; };
@@ -482,6 +487,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 6;
 			files = (
+				27656A9919C56E340049BFA8 /* libfmod.dylib in CopyFiles */,
 				862BBACD18872BB400E3233A /* libLeap.dylib in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -491,6 +497,18 @@
 /* Begin PBXFileReference section */
 		27656A8519C411EB0049BFA8 /* AudioAsset.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AudioAsset.cc; sourceTree = "<group>"; };
 		27656A8619C411EB0049BFA8 /* AudioAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioAsset.h; sourceTree = "<group>"; };
+		27656A8819C567AB0049BFA8 /* AudioAsset_ScriptBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioAsset_ScriptBinding.h; sourceTree = "<group>"; };
+		27656A8919C567AB0049BFA8 /* AudioProvider.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AudioProvider.cc; sourceTree = "<group>"; };
+		27656A8A19C567AB0049BFA8 /* AudioProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioProvider.h; sourceTree = "<group>"; };
+		27656A8B19C567AB0049BFA8 /* AudioProviderCore.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AudioProviderCore.cc; sourceTree = "<group>"; };
+		27656A8C19C567AB0049BFA8 /* AudioProviderCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioProviderCore.h; sourceTree = "<group>"; };
+		27656A8D19C567AB0049BFA8 /* FmodAudio_ScriptBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FmodAudio_ScriptBinding.h; sourceTree = "<group>"; };
+		27656A8E19C567AB0049BFA8 /* FmodAudio.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FmodAudio.cc; sourceTree = "<group>"; };
+		27656A8F19C567AB0049BFA8 /* FmodAudio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FmodAudio.h; sourceTree = "<group>"; };
+		27656A9319C567E40049BFA8 /* AudioEmitter_ScriptBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioEmitter_ScriptBinding.h; sourceTree = "<group>"; };
+		27656A9419C567E40049BFA8 /* AudioEmitter.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AudioEmitter.cc; sourceTree = "<group>"; };
+		27656A9519C567E40049BFA8 /* AudioEmitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioEmitter.h; sourceTree = "<group>"; };
+		27656A9719C56E130049BFA8 /* libfmod.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfmod.dylib; path = ../../lib/fmod/lowlevel/lib/libfmod.dylib; sourceTree = "<group>"; };
 		27908DCD18A3F8CB002D41BD /* Animation.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = Animation.c; path = ../../../source/spine/Animation.c; sourceTree = "<group>"; };
 		27908DCE18A3F8CB002D41BD /* Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Animation.h; path = ../../../source/spine/Animation.h; sourceTree = "<group>"; };
 		27908DCF18A3F8CB002D41BD /* AnimationState.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = AnimationState.c; path = ../../../source/spine/AnimationState.c; sourceTree = "<group>"; };
@@ -669,7 +687,6 @@
 		865A20BE165158CA00527C44 /* torque2d.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = torque2d.icns; path = Torque2D/torque2d.icns; sourceTree = "<group>"; };
 		865A20C116515ACE00527C44 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		865A20C216515ACE00527C44 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
-		865A20C316515ACE00527C44 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		865A20C416515ACE00527C44 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		865A21E9165187B600527C44 /* Box2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Box2D.h; sourceTree = "<group>"; };
 		865A21EB165187B600527C44 /* b2BroadPhase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = b2BroadPhase.cpp; sourceTree = "<group>"; };
@@ -1514,13 +1531,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27656A9819C56E130049BFA8 /* libfmod.dylib in Frameworks */,
 				867492F5188727FF00CF0136 /* libLeap.dylib in Frameworks */,
 				865A20CA16515B1E00527C44 /* AppKit.framework in Frameworks */,
 				865A20CC16515B1E00527C44 /* Cocoa.framework in Frameworks */,
 				865A20CD16515B1E00527C44 /* CoreData.framework in Frameworks */,
 				865A20CE16515B1E00527C44 /* CoreFoundation.framework in Frameworks */,
 				865A20CF16515B1E00527C44 /* Foundation.framework in Frameworks */,
-				865A20D016515B1E00527C44 /* OpenAL.framework in Frameworks */,
 				865A20D116515B1E00527C44 /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1746,7 +1763,6 @@
 				869FF8C01651518C002FE082 /* CoreData.framework */,
 				865A20C216515ACE00527C44 /* CoreFoundation.framework */,
 				869FF8C11651518C002FE082 /* Foundation.framework */,
-				865A20C316515ACE00527C44 /* OpenAL.framework */,
 				865A20C416515ACE00527C44 /* OpenGL.framework */,
 			);
 			name = System;
@@ -2065,6 +2081,7 @@
 		869FF8BB1651518C002FE082 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				27656A9719C56E130049BFA8 /* libfmod.dylib */,
 				867492F4188727FF00CF0136 /* libLeap.dylib */,
 				865A20C916515AEF00527C44 /* System */,
 				869FF8BE1651518C002FE082 /* Other Frameworks */,
@@ -2249,6 +2266,9 @@
 		86BC7EB716518D4600D96ADF /* sceneobject */ = {
 			isa = PBXGroup;
 			children = (
+				27656A9419C567E40049BFA8 /* AudioEmitter.cc */,
+				27656A9519C567E40049BFA8 /* AudioEmitter.h */,
+				27656A9319C567E40049BFA8 /* AudioEmitter_ScriptBinding.h */,
 				86BC7EBB16518D4600D96ADF /* CompositeSprite.cc */,
 				86BC7EBC16518D4600D96ADF /* CompositeSprite.h */,
 				86BC7EBD16518D4600D96ADF /* CompositeSprite_ScriptBinding.h */,
@@ -2338,6 +2358,14 @@
 			children = (
 				27656A8519C411EB0049BFA8 /* AudioAsset.cc */,
 				27656A8619C411EB0049BFA8 /* AudioAsset.h */,
+				27656A8819C567AB0049BFA8 /* AudioAsset_ScriptBinding.h */,
+				27656A8919C567AB0049BFA8 /* AudioProvider.cc */,
+				27656A8A19C567AB0049BFA8 /* AudioProvider.h */,
+				27656A8B19C567AB0049BFA8 /* AudioProviderCore.cc */,
+				27656A8C19C567AB0049BFA8 /* AudioProviderCore.h */,
+				27656A8E19C567AB0049BFA8 /* FmodAudio.cc */,
+				27656A8F19C567AB0049BFA8 /* FmodAudio.h */,
+				27656A8D19C567AB0049BFA8 /* FmodAudio_ScriptBinding.h */,
 			);
 			name = audio;
 			path = ../../../source/audio;
@@ -3240,6 +3268,7 @@
 				86D770621656873C0046D71F /* mSolver.cc in Sources */,
 				86D770631656873C0046D71F /* mSplinePatch.cc in Sources */,
 				86D770641656873C0046D71F /* rectClipper.cpp in Sources */,
+				27656A9619C567E40049BFA8 /* AudioEmitter.cc in Sources */,
 				86D770651656873C0046D71F /* dataChunker.cc in Sources */,
 				86D770671656873C0046D71F /* dispatcher.cc in Sources */,
 				86D770681656873C0046D71F /* eventManager.cc in Sources */,
@@ -3600,6 +3629,7 @@
 				865A23431651881300527C44 /* pngerror.c in Sources */,
 				27908E0718A3F8CB002D41BD /* Json.c in Sources */,
 				865A23441651881300527C44 /* pngget.c in Sources */,
+				27656A9219C567AB0049BFA8 /* FmodAudio.cc in Sources */,
 				865A23451651881300527C44 /* pngmem.c in Sources */,
 				865A23461651881300527C44 /* pngpread.c in Sources */,
 				865A23471651881300527C44 /* pngread.c in Sources */,
@@ -3610,6 +3640,7 @@
 				865A234C1651881300527C44 /* pngtrans.c in Sources */,
 				865A234D1651881300527C44 /* pngwio.c in Sources */,
 				865A234E1651881300527C44 /* pngwrite.c in Sources */,
+				27656A9119C567AB0049BFA8 /* AudioProviderCore.cc in Sources */,
 				865A234F1651881300527C44 /* pngwtran.c in Sources */,
 				865A23501651881300527C44 /* pngwutil.c in Sources */,
 				865A235A16518AD300527C44 /* AppDelegate.mm in Sources */,
@@ -3667,6 +3698,7 @@
 				2AE2938516EF4C220015E200 /* WaveComposite.cc in Sources */,
 				2AA3655916F3552200E7A900 /* ImageFrameProvider.cc in Sources */,
 				2AA3655A16F3552200E7A900 /* ImageFrameProviderCore.cc in Sources */,
+				27656A9019C567AB0049BFA8 /* AudioProvider.cc in Sources */,
 				2AD42140170433FE005BB8AD /* tamlXmlParser.cc in Sources */,
 				2AD42141170433FE005BB8AD /* tamlXmlReader.cc in Sources */,
 				2AD42142170433FE005BB8AD /* tamlXmlWriter.cc in Sources */,
@@ -3743,19 +3775,19 @@
 				HEADER_SEARCH_PATHS = (
 					../../source,
 					../../lib,
-					../../lib/vorbis/include,
 					../../lib/lpng,
 					../../lib/ljpeg,
-					../../lib/lungif,
 					../../source/persistence/rapidjson/include,
 					"$(SYSTEM_LIBRARY_DIR)/Frameworks/ApplicationServices.framework/Versions/Current/Frameworks/QD.framework/Headers",
 					"$(SYSTEM_LIBRARY_DIR)/Frameworks/OpenGL.framework/Headers",
 					../../lib/LeapSDK/include,
+					../../lib/fmod/lowlevel/inc,
 				);
 				INFOPLIST_FILE = "Torque2D/Torque2D-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"../../lib/LeapSDK/lib/libc++",
+					../../lib/fmod/lowlevel/lib,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = /usr/lib/libz.dylib;
@@ -3849,21 +3881,21 @@
 				HEADER_SEARCH_PATHS = (
 					../../source,
 					../../lib,
-					../../lib/vorbis/include,
 					../../lib/lpng,
 					../../lib/ljpeg,
-					../../lib/lungif,
 					../../source/persistence/rapidjson/include,
 					../../source/testing/googleTest,
 					../../source/testing/googleTest/include,
 					"$(SYSTEM_LIBRARY_DIR)/Frameworks/ApplicationServices.framework/Versions/Current/Frameworks/QD.framework/Headers",
 					"$(SYSTEM_LIBRARY_DIR)/Frameworks/OpenGL.framework/Headers",
 					../../lib/LeapSDK/include,
+					../../lib/fmod/lowlevel/inc,
 				);
 				INFOPLIST_FILE = "Torque2D/Torque2D-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"../../lib/LeapSDK/lib/libc++",
+					../../lib/fmod/lowlevel/lib,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = /usr/lib/libz.dylib;
@@ -3891,35 +3923,21 @@
 				HEADER_SEARCH_PATHS = (
 					../../source,
 					../../lib,
-					../../lib/vorbis/include,
 					../../lib/lpng,
 					../../lib/ljpeg,
-					../../lib/lungif,
 					../../source/persistence/rapidjson/include,
 					../../source/testing/googleTest,
 					../../source/testing/googleTest/include,
 					"$(SYSTEM_LIBRARY_DIR)/Frameworks/ApplicationServices.framework/Versions/Current/Frameworks/QD.framework/Headers",
 					"$(SYSTEM_LIBRARY_DIR)/Frameworks/OpenGL.framework/Headers",
 					../../lib/LeapSDK/include,
-				);
-				"HEADER_SEARCH_PATHS[arch=*]" = (
-					../../source,
-					../../lib,
-					../../lib/vorbis/include,
-					../../lib/lpng,
-					../../lib/ljpeg,
-					../../lib/lungif,
-					../../source/persistence/rapidjson/include,
-					../../source/testing/googleTest,
-					../../source/testing/googleTest/include,
-					"$(SYSTEM_LIBRARY_DIR)/Frameworks/ApplicationServices.framework/Versions/Current/Frameworks/QD.framework/Headers",
-					"$(SYSTEM_LIBRARY_DIR)/Frameworks/OpenGL.framework/Headers",
-					../../lib/LeapSDK/include,
+					../../lib/fmod/lowlevel/inc,
 				);
 				INFOPLIST_FILE = "Torque2D/Torque2D-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"../../lib/LeapSDK/lib/libc++",
+					../../lib/fmod/lowlevel/lib,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = /usr/lib/libz.dylib;

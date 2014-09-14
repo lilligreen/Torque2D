@@ -219,6 +219,7 @@ protected:
     U32                     mRotateToEventId;
     U32                     mSerialId;
     StringTableEntry        mRenderGroup;
+    bool                    mAudioListener;
 
 protected:
     static S32 QSORT_CALLBACK sceneObjectLayerDepthSort(const void* a, const void* b);
@@ -532,6 +533,10 @@ public:
     inline void             setPickingAllowed( const bool pickingAllowed ) { mPickingAllowed = pickingAllowed; }
     inline bool             getPickingAllowed(void) const               { return mPickingAllowed; }
 
+    // Audio listener.
+    inline void             setAudioListener( const bool listener ) { mAudioListener = listener; }
+    inline bool             getAudioListener(void) const                { return mAudioListener; }
+
     /// Cloning.
     virtual void            copyFrom( SceneObject* pSceneObject, const bool copyDynamicFields );
     virtual void            copyTo( SimObject* object );
@@ -711,6 +716,9 @@ protected:
     static bool             writeUpdateCallback( void* obj, StringTableEntry pFieldName ) { return static_cast<SceneObject*>(obj)->getUpdateCallback() == true; }
     static bool             writeCollisionCallback( void* obj, StringTableEntry pFieldName ) { return static_cast<SceneObject*>(obj)->getCollisionCallback() == true; }
     static bool             writeSleepingCallback( void* obj, StringTableEntry pFieldName ) { return static_cast<SceneObject*>(obj)->getSleepingCallback() == true; }
+
+    /// Audio listener.
+    static bool             writeAudioListener( void* obj, StringTableEntry pFieldName ) { return static_cast<SceneObject*>(obj)->getAudioListener() == true; } 
 
     /// Scene.
     static bool             setScene(void* obj, const char* data)

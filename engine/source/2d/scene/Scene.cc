@@ -5279,6 +5279,7 @@ static EnumTable::Enums DebugOptionsLookup[] =
                 { Scene::SCENE_DEBUG_COLLISION_SHAPES,  "collision" },
                 { Scene::SCENE_DEBUG_POSITION_AND_COM,  "position" },
                 { Scene::SCENE_DEBUG_SORT_POINTS,       "sort" },
+                { Scene::SCENE_DEBUG_AUDIO_EMITTER,     "audio" },
                 };
 
 //-----------------------------------------------------------------------------
