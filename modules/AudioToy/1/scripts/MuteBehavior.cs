@@ -48,14 +48,14 @@ function MuteBehavior::muteAudio(%this, %fromBehavior, %fromOutput)
     {
         case "AudioToy:SoundOn":
             // Set the volume on channel 0 to 0%.
-            alxSetChannelVolume(0, 0.0);
+            audioSetMute($channel, true);
                 
             // Change the image from unmute to mute.
             %this.owner.Image = "AudioToy:SoundOff";
 
         case "AudioToy:SoundOff":
             // Set the volume on channel 0 to 100%.
-            alxSetChannelVolume(0, 1.0);
+            audioSetMute($channel, false);
 
             // Change the image from mute to unmute.
             %this.owner.Image = "AudioToy:SoundOn";

@@ -53,12 +53,12 @@ function MusicBehavior::playMusic(%this, %fromBehavior, %fromOutput)
         case "AudioToy:Play":
             // If there is no audio handle, start playing music.
             if (%this.owner.Music $= "")
-                %this.owner.Music = alxPlay(AudioToy.Music);
+                %this.owner.Music = audioPlay(AudioToy.Music);
 
             // If the music is paused, unpause it.
             if (%this.owner.Paused)
             {
-                alxUnpause(%this.owner.Music);
+                audioSetPaused(%this.owner.Music, false);
                 %this.owner.Paused = false;
             }
                 
@@ -70,11 +70,13 @@ function MusicBehavior::playMusic(%this, %fromBehavior, %fromOutput)
             if (%this.owner.Music !$= "")
             {
                 // Pause the music and set the paused flag to true.
-                alxPause(%this.owner.Music);
+                audioSetPaused(%this.owner.Music, true);
                 %this.owner.Paused = true;
             }
             
             // Change the image from pause to play.
             %this.owner.Image = "AudioToy:Play";
     }
+
+    $channel = %this.owner.Music;
 }

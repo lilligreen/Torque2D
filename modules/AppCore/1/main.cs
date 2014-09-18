@@ -33,6 +33,9 @@ function AppCore::create( %this )
     // Set the canvas color
     Canvas.BackgroundColor = "CornflowerBlue";
     Canvas.UseBackgroundColor = true;
+
+    // Initialize the audio system.
+    initializeFmod(128);
     
     ModuleDatabase.loadGroup("gameBase");
 }
@@ -41,6 +44,6 @@ function AppCore::create( %this )
 
 function AppCore::destroy( %this )
 {
-
+    // Shutdown the audio system.
+    shutdownFmod();
 }
-

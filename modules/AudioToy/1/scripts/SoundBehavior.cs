@@ -61,8 +61,8 @@ function SoundBehavior::playSound(%this, %fromBehavior, %fromOutput)
         return;
 
     // Play a sound effect if nothing is currently playing.
-    if (!alxIsPlaying(%this.owner.Sound))
-        %this.owner.Sound = alxPlay(%this.DeathSound);
+    if (!audioGetIsPlaying(%this.owner.Sound))
+        audioPlay(%this.DeathSound);
 
     // Prevent the sound from playing again until a reset signal arrives.
     %this.Block = true;

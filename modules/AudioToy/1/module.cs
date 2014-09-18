@@ -50,7 +50,7 @@ function AudioToy::create(%this)
 function AudioToy::destroy(%this)
 {
     // Stop all audio when quitting the module.
-    alxStopAll();
+    audioStopAll();
 }
 
 //-----------------------------------------------------------------------------
@@ -61,7 +61,7 @@ function AudioToy::reset(%this)
     SandboxScene.clear();
     
     // Stop all music.
-    alxStopAll();
+    audioStopAll();
     
     // Load scene objects from TAML.
     %background = TamlRead("./objects/Background.taml");
