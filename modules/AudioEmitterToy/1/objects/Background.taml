@@ -1,0 +1,25 @@
+<CompositeSprite
+    SceneLayer="31">
+    <CompositeSprite.Sprites>
+        <Sprite
+            Image="DeathBallToy:upperLeftDesert"
+            Frame="0"
+            Position="0 0"
+            Size="100 75" />
+        <Sprite
+            Image="DeathBallToy:upperRightDesert"
+            Frame="0"
+            Position="100 0"
+            Size="100 75" />
+        <Sprite
+            Image="DeathBallToy:lowerLeftDesert"
+            Frame="0"
+            Position="0 -75"
+            Size="100 75" />
+        <Sprite
+            Image="DeathBallToy:lowerRightDesert"
+            Frame="0"
+            Position="100 -75"
+            Size="100 75" />
+    </CompositeSprite.Sprites>
+</CompositeSprite>

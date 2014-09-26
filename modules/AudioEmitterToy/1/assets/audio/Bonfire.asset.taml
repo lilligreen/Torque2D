@@ -1,0 +1,8 @@
+<AudioAsset
+    AssetName="Bonfire"
+    AudioFile="Bonfire.mp3"
+    Looping="1"
+    MinDistance="6.0"
+    MaxDistance="30.0" />
+
+<!-- Sound license: CC-BY-3.0 http://www.freesound.org/people/dobroide/sounds/4211/ -->

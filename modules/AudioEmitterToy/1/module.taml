@@ -1,0 +1,15 @@
+<ModuleDefinition
+    ModuleId="AudioEmitterToy"
+    VersionId="1"
+    Description="Positional audio demonstration."
+    Dependencies="DeathBallToy=1,ToyAssets=1"
+    Type="toy"
+    ToyCategoryIndex="5"
+    ScriptFile="module.cs"
+    CreateFunction="create"
+    DestroyFunction="destroy">
+    <DeclaredAssets
+        Path="assets"
+        Extension="asset.taml"
+        Recurse="true"/>        
+</ModuleDefinition>

@@ -1,0 +1,6 @@
+<AudioAsset
+    AssetName="Beehive"
+    AudioFile="Beehive.wav"
+    Looping="1"
+    MinDistance="1.0"
+    MaxDistance="10.0" />

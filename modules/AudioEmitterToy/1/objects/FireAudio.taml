@@ -1,0 +1,7 @@
+<AudioEmitter
+    Name = "FireAudio"
+    SceneLayer = "20"
+    Position = "80 -5"
+    Size = "2 2"
+    Audio = "AudioEmitterToy:Bonfire">
+</AudioEmitter>

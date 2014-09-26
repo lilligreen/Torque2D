@@ -1,0 +1,18 @@
+<Sprite
+    Name = "Player"
+    SceneLayer = "8"
+    Position = "50 -40"
+    Size = "6 6"
+    Animation = "@asset=DeathBallToy:soldierAnim"
+    AudioListener = "true">
+    <Sprite.Behaviors>
+        <MoveBehavior
+            UpKey = "keyboard up"
+            DownKey = "keyboard down"
+            LeftKey = "keyboard left"
+            RightKey = "keyboard right"
+            Acceleration = "5"
+            TurnSpeed = "150"
+            Damping = "0" />
+    </Sprite.Behaviors>
+</Sprite>

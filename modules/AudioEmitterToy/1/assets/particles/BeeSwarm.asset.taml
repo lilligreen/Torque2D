@@ -1,0 +1,37 @@
+<ParticleAsset
+    AssetName="BeeSwarm">
+    <ParticleAssetEmitter
+        EmitterName="Bees"
+        EmitterType="BOX"
+        EmitterSize="5 5"
+        OrientationType="RANDOM"
+        Image="@asset=ToyAssets:Particles1"
+        Frame="2">
+        <ParticleAssetEmitter.Fields>
+            <Lifetime
+                Keys="0 0.5" />
+            <Quantity
+                Keys="0 100" />
+            <SizeX
+				Keys="0 0.5" />
+            <Speed
+                Keys="0 1" />
+            <RandomMotion
+                Keys="0 200" />
+            <EmissionForce
+                Keys="0 0.5" />
+            <EmissionForceVariation
+                Keys="0 10" />
+            <EmissionAngle
+                Keys="0 90" />
+            <EmissionArc
+                Keys="0 15" />
+            <RedChannel
+                Keys="0 0" />
+            <GreenChannel
+                Keys="0 0" />
+            <BlueChannel
+                Keys="0 0" />
+        </ParticleAssetEmitter.Fields>
+    </ParticleAssetEmitter>
+</ParticleAsset>

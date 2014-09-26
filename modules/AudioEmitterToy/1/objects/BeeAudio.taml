@@ -1,0 +1,7 @@
+<AudioEmitter
+	Name="BeeAudio"
+    SceneLayer = "20"
+    Position = "50 -55"
+    Size = "2 2"
+    Audio = "AudioEmitterToy:Beehive">
+</AudioEmitter>

@@ -1,0 +1,6 @@
+<ParticlePlayer
+    SceneLayer = "20"
+    Position = "80 -5"
+    Size = "2 2"
+    Particle = "ToyAssets:bonfire">
+</ParticlePlayer>
