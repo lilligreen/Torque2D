@@ -1,53 +1,27 @@
 ![Torque Logo](http://static.garagegames.com/static/pg/logokits/Torque-Logo_H.png)
-## Torque 2D 3.1
+## Torque 2D 3.1 + FMOD
 
-MIT Licensed Open Source version of Torque 2D from GarageGames. Maintained by the T2D Steering Committee and contributions from the community.
+This branch features the FMOD audio system, completely replacing the previous OpenAL implementation.
 
-Dedicated to 2D game development, Torque 2D is an extremely powerful, flexible, and fast C++ engine which has been used in hundreds of professional games. It is a true cross platform solution providing you access to Windows, OSX, Linux, iOS, Android, and the web - all from one codebase. It includes an OpenGL batched rendering system, Box2D physics, OpenAL audio, skeletal and spritesheet animation, automated asset management, a modular project structure, TAML object persistence, and a C-like scripting language.
+### Build Instructions
 
-### Branches
+Currently, only the OSX Xcode project files have been updated to reflect the changes made to this branch. Any help to update the other platforms would be appreaciated!
 
-Here is an overview of the branches found in the Torque 2D repository: 
+Distributing the FMOD API requires permission, so for now they have been left out of the repository here. To successfully compile this branch on OSX, follow these steps:
 
-* **master:** this branch contains the current stable release code that can be used in a production environment. 
-* **development:** this branch is dedicated to active development. It contains the latest bug fixes, new features, and other updates. All pull requests need to go to the development branch. While we try our best to test all incoming changes, it is possible for mistakes to slip in therefore this branch should always be considered unstable.
-* **gh-pages:** this branch currently contains the html pages generated from doxygen for the engine and TorqueScript references.
+  1. Download the FMOD Studio Programmer's API for the Mac from here: https://www.fmod.org/download/
+  2. In the location where you downloaded this branch of Torque 2D, create a fmod folder under `engine/lib`
+  3. Copy all header files from the FMOD API to the `engine/lib/fmod/lowlevel/inc` folder
+  4. Copy libfmod.dylib to `engine/lib/fmod/lowlevel/lib`
+  5. In the Terminal, change directories to the `engine/lib/fmod/lowlevel/lib` folder and type in the following `install_name_tool -id @loader_path/libfmod.dylib libfmod.dylib`
+  6. Build the project in Xcode
 
-### Precompiled Version
 
-If you do not wish to compile the source code yourself, precompiled binary files for Windows and OSX are available from the [Torque 2D Release Page](https://github.com/GarageGames/Torque2D/releases).
+### Examples
 
-### Building the Source
+The AudioToy has been updated to work with FMOD and positional audio is demonstrated in the AudioEmitterToy.
 
-After downloading a copy of the source code, the following project files for each platform are provided for you and can be found in the `engine/compilers` folder.
 
-* **Windows:** Visual Studio 2010, 2012, or 2013 (works with the free, "Express for Windows Desktop" version)
-* **OSX:** Xcode
-* **Linux:** Make
-* **iOS:** Xcode_iOS
-* **Android:** Eclipse
-* **Web:** Emscripten/Cmake
+### Issues
 
-See the [wiki](https://github.com/GarageGames/Torque2D/wiki) for available guides on platform setup and development.
-
-### Batteries Included
-
-![truck](http://t2dtutorials.com/img/Truck.png)
-
-Running Torque 2D for the first time out of the box will start you off in the Sandbox. The Sandbox is a collection of over 30 simple "toys" (or modules) which demonstrate various features in T2D. The default toy is a side scrolling level with a monster truck. To see a list of the available modules/toys to choose from, click on the `Show Tools` button in the lower right corner of the screen.
-
-Naturally all of the script code and assets for each toy are available to you in the modules folder to use as practical examples while learning T2D.
-
-The Sandbox is also an excellent framework for rapidly prototyping your own game ideas - it allows for easy integration of additional modules and provides numerous debugging features, like console access and real-time metrics.
-
-### Documentation
-
-All documentation for the open source version of Torque 2D can be found on our [Github wiki page](https://github.com/GarageGames/Torque2D/wiki). It contains many tutorials, detailed technical information on engine systems, a script reference guide automatically generated from the source code, and articles on how to contribute to our open source development.
-
-### Community
-
-Don't go it alone! Join the active community around Torque 2D at GarageGames.com. Ask questions, talk about T2D and general game development topics, learn the latest news, or post a blog promoting your game or showing off additional engine features in your T2D fork.
-
-* [Torque 2D Beginner Forum](http://www.garagegames.com/community/forums/84)
-* [Torque 2D Professional Forum](http://www.garagegames.com/community/forums/85)
-* [GarageGames Community Blogs](http://www.garagegames.com/community/blogs)
+There are a few features missing and minor bugs lurking around. More progress to come!
